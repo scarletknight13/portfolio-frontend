@@ -1,4 +1,35 @@
+import {useEffect, useState} from 'react'
+
 function Projects(props){
-    return <h1>Projects</h1>
+    const [projects, setProjects] = useState(null);
+    
+    async function getProjectsData(){
+        const response = await fetch(props.URL + 'projects')
+        const data = await response.json();
+        setProjects(data)
+    }
+    
+    useEffect(() =>{
+        getProjectsData()
+    }, [])
+
+    function loaded(){
+        const projectsElements = projects.map((project) => {
+            return <div>
+                <h1>{project.name}</h1>
+                <img src={project.image} />
+                <a href={project.git}>
+                <button>Github</button>
+                </a>
+                <a href={project.live}>
+                <button>live site</button>
+                </a>
+            </div> 
+
+        })
+        return projectsElements
+    }
+
+    return projects ? loaded() : <h1>loading...</h1>
 }
 export default Projects

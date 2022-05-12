@@ -1,27 +1,12 @@
-import '.styles/App.css';
-import Home from './pages/Home';
-import Footer from './components/Footer';
-import Header from './components/Header';
-import About from './pages/About';
-import Projects from './pages/Projects';
-import {Route, Routes} from 'react-router-dom';
-const URL = 'https://intense-bastion-62185.herokuapp.com/'
+import './styles/App.css';
+import { Outlet } from 'react-router';
 
 function App() {
+  // URL should have YOUR HEROKU URL for your backend, make sure you include the trailing slash
+
   return (
     <div className="App">
-      <Header></Header>
-      <Routes>
-        <Route exact path='/'>
-          <Home/>
-        </Route>
-        <Route path='/projects'>
-          <Projects URL={URL}/>
-        </Route>
-        <Route path='/about'>
-          <About URL={URL}/>
-        </Route>
-      </Routes>
+      <Outlet></Outlet>
     </div>
   );
 }
