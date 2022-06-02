@@ -1,0 +1,16 @@
+.About{
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+img{
+    height: 350px;
+    width: 350px;
+}
+.image-container{
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
