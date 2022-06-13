@@ -7,8 +7,6 @@ import {BrowserRouter as Router} from 'react-router-dom'
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
-import About from "./pages/About";
-import Projects from "./pages/Projects";
 
 const URL = "https://intense-bastion-62185.herokuapp.com/";
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -18,9 +16,7 @@ root.render(
       <Header/>
       <Routes>
         <Route path="/" element={<App />}>
-          <Route index element={<Home/>}/>
-          <Route path="projects/" element={<Projects URL={URL} />}/>
-          <Route path="about/" element={<About URL={URL} />} />
+          <Route index element={<Home/>} URL={URL}/>
         </Route>
       </Routes>
       <Footer/>

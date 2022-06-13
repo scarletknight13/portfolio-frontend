@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-
+import '../styles/Header.css'
 function Header(props) {
   //inline style for the nav tag
   const navStyle = {
@@ -11,22 +11,18 @@ function Header(props) {
     width: "100%",
     margin: "auto",
   };
-  const linkStlye= {
-    textDecoration: "none",
-    color: 'black'
-  }
   return (
     <header>
       <nav style={navStyle}>
-        <Link style={linkStlye} to="/">
-          <div>HOME</div>
-        </Link>
-        <Link style={linkStlye} to="/about">
+        <a className="section-links" href="#Skills" >
+          <div>SKILLS</div>
+        </a>
+        <a className="section-links" href="#about" >
           <div>ABOUT</div>
-        </Link>
-        <Link style={linkStlye} to="/projects">
+        </a>
+        <a className="section-links" href="#projects" >
           <div>PROJECTS</div>
-        </Link>
+        </a>
       </nav>
     </header>
   );

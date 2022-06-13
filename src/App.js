@@ -5,7 +5,7 @@ function App() {
   // URL should have YOUR HEROKU URL for your backend, make sure you include the trailing slash
 
   return (
-    <div className="App">
+    <div className="App" URL="">
       <Outlet></Outlet>
     </div>
   );

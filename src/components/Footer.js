@@ -5,7 +5,7 @@ function Footer(props){
     return (
         <div className="Footer">
             <div className="container">
-                <p>Copyright Jesse Broxton</p>
+                <p className="footer-notes">Made by Jesse Broxton</p>
                 <a target="_blank" href="https://github.com/scarletknight13"><BsGithub /></a>
                 <a target="_blank" href="https://www.linkedin.com/in/jesse-broxton/"><BsLinkedin /></a>
             </div>

@@ -1,103 +1,132 @@
 /* https://webkit.org/blog-files/3d-transforms/morphing-cubes.html */
 .Home{
-    background-color: aqua;
+  overflow: scroll;
+  overflow-x: hidden;
+  height: 85vh;
+  
 }
 #container {
-    -webkit-perspective: 800; /* For compatibility with iPhone 3.0, we leave off the units here */
-    -webkit-perspective-origin: 50% 225px;
-    width: 100%;
-    height: 400px;
-  }
-  #stage {
-    width: 100%;
-    height: 100%;
-    -webkit-transition: -webkit-transform 2s;
-    -webkit-transform-style: preserve-3d;
-  }
+  -webkit-perspective: 800; /* For compatibility with iPhone 3.0, we leave off the units here */
+  -webkit-perspective-origin: 50% 225px;
+  width: 100%;
+  height: 325px;
+}
+#stage {
+  width: 100%;
+  height: 100%;
+  -webkit-transition: -webkit-transform 2s;
+  -webkit-transform-style: preserve-3d;
+}
+
+#shape {
+  position: relative;
+  top: 160px;
+  margin: 0 auto;
+  height: 200px;
+  width: 200px;
+  -webkit-transform-style: preserve-3d;
+}
+
+.plane {
+  position: absolute;
+  height: 22px;
+  width: 190px;
+  -webkit-border-radius: 12px;
+  -webkit-box-sizing: border-box;
+  text-align: center;
+  font-family: Georgia, serif;
+  font-size: 16px;
+  background-color: #49BAF5;
+  color:red;
+  -webkit-transition: -webkit-transform 2s, opacity 2s;
+  backface-visibility: hidden;
+}
   
-  #shape {
-    position: relative;
-    top: 160px;
-    margin: 0 auto;
-    height: 200px;
-    width: 200px;
-    -webkit-transform-style: preserve-3d;
-  }
-  
-  .plane {
-    position: absolute;
-    height: 25px;
-    width: 190px;
-    border: 1px solid white;
-    -webkit-border-radius: 12px;
-    -webkit-box-sizing: border-box;
-    text-align: center;
-    font-family: Georgia, serif;
-    font-size: 16px;
-    color: rgb(225, 225, 95);
-    background-color: rgb(230, 25, 42);
-    -webkit-transition: -webkit-transform 2s, opacity 2s;
-    backface-visibility: hidden;
-  }
-  
-  #shape.backfaces .plane {
-    -webkit-backface-visibility: visible;
-  }
-  
-  @keyframes spin {
-    from { -webkit-transform: rotateY(0); }
-    to   { -webkit-transform: rotateY(-360deg); }
-  }
-  #shape {
-    -webkit-animation: spin 15s infinite linear;
-  }
-  
-  
-  .ring > .one {
-    -webkit-transform: translateZ(380px);
-  }
-  
-  .ring > .two {
-    -webkit-transform: rotateY(30deg) translateZ(380px);
-  }
-  
-  .ring > .three {
-    -webkit-transform: rotateY(60deg) translateZ(380px);
-  }
-  
-  .ring > .four {
-    -webkit-transform: rotateY(90deg) translateZ(380px);
-  }
-  
-  .ring > .five {
-    -webkit-transform: rotateY(120deg) translateZ(380px);
-  }
-  
-  .ring > .six {
-    -webkit-transform: rotateY(150deg) translateZ(380px);
-  }
-  
-  .ring > .seven {
-    -webkit-transform: rotateY(180deg) translateZ(380px);
-  }
-  
-  .ring > .eight {
-    -webkit-transform: rotateY(210deg) translateZ(380px);
-  }
-  
-  .ring > .nine {
-    -webkit-transform: rotateY(-120deg) translateZ(380px);
-  }
-  
-  .ring > .ten {
-    -webkit-transform: rotateY(-90deg) translateZ(380px);
-  }
-  
-  .ring > .eleven {
-    -webkit-transform: rotateY(300deg) translateZ(380px);
-  }
-  
-  .ring > .twelve {
-    -webkit-transform: rotateY(330deg) translateZ(380px);
-  }
+#shape.backfaces .plane {
+  -webkit-backface-visibility: visible;
+}
+
+@keyframes spin {
+  from { -webkit-transform: rotateY(0); }
+  to   { -webkit-transform: rotateY(-360deg); }
+}
+#shape {
+  -webkit-animation: spin 15s infinite linear;
+}
+
+
+.ring > .one {
+  -webkit-transform: translateZ(380px);
+}
+
+.ring > .two {
+  -webkit-transform: rotateY(30deg) translateZ(380px);
+}
+
+.ring > .three {
+  -webkit-transform: rotateY(60deg) translateZ(380px);
+}
+
+.ring > .four {
+  -webkit-transform: rotateY(90deg) translateZ(380px);
+}
+
+.ring > .five {
+  -webkit-transform: rotateY(120deg) translateZ(380px);
+}
+
+.ring > .six {
+  -webkit-transform: rotateY(150deg) translateZ(380px);
+}
+
+.ring > .seven {
+  -webkit-transform: rotateY(180deg) translateZ(380px);
+}
+
+.ring > .eight {
+  -webkit-transform: rotateY(210deg) translateZ(380px);
+}
+
+.ring > .nine {
+  -webkit-transform: rotateY(-120deg) translateZ(380px);
+}
+
+.ring > .ten {
+  -webkit-transform: rotateY(-90deg) translateZ(380px);
+}
+
+.ring > .eleven {
+  -webkit-transform: rotateY(300deg) translateZ(380px);
+}
+
+.ring > .twelve {
+  -webkit-transform: rotateY(330deg) translateZ(380px);
+}
+
+/* project section styling */
+
+.project-card{
+  height: 10%;
+  width: calc(50% - 150px);
+}
+.project-container{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: 1vh;
+}
+.project-image{
+  width: 100%;
+  height: 80%;
+  border: rgb(230, 25, 42) solid 2px;
+}
+.project-links{
+  margin-top: 1vh;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+
+
   
